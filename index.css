@@ -117,31 +117,15 @@ form{
     font-size: larger;
 }
 
-.container{
-    display: flex;
-    width: 100%;
-}
 .justify-end{
     justify-content: flex-end;
 }
 .flex-column{
     flex-direction: column;
 }
-.flex-grow-1{
-    flex-grow: 1;
-}
-.flex-grow-2{
-    flex-grow: 2;
-}
-.flex-grow-3{
-    flex-grow: 3;
-}
+
 .item{
     background: rgba(11, 134, 182, 0.5);
-    border: 1px solid black;
-}
-.item1{
-    background: rgba(182, 247, 4, 0.5);
     border: 1px solid black;
 }
 
@@ -155,3 +139,137 @@ form{
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+
+/* aaaa */
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    background-color: #e4e4e4;
+  }
+  
+  #notesWrapper {
+    padding: 10px;
+  }
+
+
+/* bbbb */
+.new-note-btn{
+    width: 200px;
+    margin: 0 auto 20px;
+    background-color: #FFF;
+    padding: 10px 32px;
+    border: 1px solid #e0e0e0;
+    font-size: 26px;
+    outline: 0;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+}
+.new-note-btn:hover{
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+}
+  
+.new-note-btn:active{
+    position: relative;
+    top: 1px;
+}
+
+
+.note{
+    background-color: #f0c806;
+    border-radius: 8px;
+    margin: 0 10px 20px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+}
+.note-header{
+    padding: 10px 16px 0;
+    height: 34px;
+}
+.note-close{
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    border-radius: 50%;
+    line-height: 24px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.note-close:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+  
+.note-close:focus{
+    box-shadow: inset 2px 3px 0px rgba(0, 0, 0, 0.8);
+}
+.note-close{
+    float: right;
+}
+.note-save{
+    display: inline-block;
+    width: 40px;
+    height: 24px;
+    border-radius: 50%;
+    line-height: 24px;
+    text-align: center;
+    transition: all 0.3s;
+}
+.note-save:hover{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+  
+.note-save:focus{
+    box-shadow: inset 2px 3px 0px rgba(0, 0, 0, 0.8);
+}
+.note-save{
+    float: right;
+}
+.note-title,.note-body{
+    outline: 0;
+}
+.note-title{
+    font-size: 24px;
+    padding: 10px 16px;
+    font-weight: bold;
+}
+.note-body{
+    font-size: 20px;
+    padding: 10px 16px 16px;
+}
+.note:hover {
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 1);
+}
+
+/* taskbar */
+.topnav {
+    overflow: hidden;
+    background-color: rgb(245, 150, 7);
+  }
+  
+  .topnav a {
+    width: 200px;
+    float: left;
+    color: #0f0101;
+    text-align: justify;
+    padding: 14px 16px;
+    font-size: 23px;
+    font-family: 'Caveat', cursive;
+  }
+  .topnav button {
+    float: right;
+    width: 150px;
+    margin: 0;
+    background-color: rgb(245, 150, 7);
+    padding: 10px 16px;
+    font-size: 26px;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+  }

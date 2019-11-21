@@ -1,4 +1,5 @@
 import loginScreen from "./Views/login.js"
+import noteScreen from "./Views/note.js"
 
 function setScreen(screen) {
     document.getElementById('app').innerHTML = screen.content;
@@ -6,7 +7,7 @@ function setScreen(screen) {
 }
 
 window.onload = function(){
-    setScreen(loginScreen)
+    setScreen(noteScreen)
 };
 
 export default setScreen;

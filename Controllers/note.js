@@ -1,7 +1,15 @@
-import { saveNote } from "../Models/note.js";
+import { saveNote, saveContent, updateActiveNote } from "../Models/note.js";
 
-function save(title,content){
-    saveNote(title,content);
+function creatNote(name){
+    saveNote(name);
+}
+
+function save(content){
+    saveContent(content);
+}
+
+function changeActiveNote(nextNoteId){
+    updateActiveNote(nextNoteId);
 }
 
 function remove(){
@@ -9,6 +17,8 @@ function remove(){
 }
 
 export{
+    creatNote,
+    changeActiveNote,
     save,
     remove
 };

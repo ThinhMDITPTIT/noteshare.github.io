@@ -40,9 +40,20 @@ ul{
     padding: 0;
 }
 
-input[type=email],[type=text],[type=password]{
+input[type=email],[type=password]{
     font-size: large;
     width: 350px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=text]{
+    font-size: large;
+    width: 200px;
     margin: 10px 0;
     display: inline-block;
     border: 1px solid #ccc;
@@ -89,6 +100,10 @@ button[type=submit],[type=button]:hover{
         display: flex;
         justify-content:center;
 }
+.container{
+    display: flex;
+    width: 100%;
+}
 
 .card{
         padding: 10px;
@@ -127,6 +142,15 @@ form{
 .item{
     background: rgba(11, 134, 182, 0.5);
     border: 1px solid black;
+    border-radius: 5px;
+}
+
+.flex-grow-1{
+    flex-grow: 1;
+}
+
+.flex-grow-12{
+    flex-grow: 12;
 }
 
 .listSL{
@@ -156,7 +180,19 @@ form{
     padding: 10px;
   }
 
+li:hover{
+    background-color: rgb(128, 128, 128);
+    color: black;
+    cursor: pointer;
+}
 
+li.active{
+    background-color: #0000ff;
+    color: white;
+}
+li.disable{
+    display: none;
+}
 /* bbbb */
 .new-note-btn{
     width: 200px;
@@ -169,6 +205,7 @@ form{
     transition: all 0.3s;
     cursor: pointer;
     font-family: 'Caveat', cursive;
+    border-radius: 5px;
 }
 .new-note-btn:hover{
     box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
@@ -179,6 +216,27 @@ form{
     top: 1px;
 }
 
+.new-note-btn1{
+    width: 100%;
+    margin: 10px auto 20px;
+    background-color: #FFF;
+    padding: 10px 32px;
+    border: 1px solid #e0e0e0;
+    font-size: 26px;
+    outline: 0;
+    transition: all 0.3s;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+    border-radius: 5px;
+}
+.new-note-btn1:hover{
+    box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
+}
+  
+.new-note-btn1:active{
+    position: relative;
+    top: 1px;
+}
 
 .note{
     background-color: #f0c806;
@@ -189,6 +247,38 @@ form{
     cursor: pointer;
     font-family: 'Caveat', cursive;
 }
+
+.note1{
+    background-color: #fdfcfc;
+    border-radius: 2px;
+    margin: 0;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+}
+
+.note3{
+    background-color: #f0c806;
+    border-radius: 5px;
+    margin: 10px 2px 10px 2px;
+    padding: 20px 5px 20px 5px;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+}
+
+.note2{
+    background-color: #f0c806;
+    border-radius: 2px;
+    margin: 0;
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s;
+    cursor: pointer;
+    font-family: 'Caveat', cursive;
+}
+
 .note-header{
     padding: 10px 16px 0;
     height: 34px;
@@ -231,17 +321,27 @@ form{
 .note-save{
     float: right;
 }
-.note-title,.note-body{
+.note-title,.note-title-content,.note-body{
     outline: 0;
 }
 .note-title{
+    text-align: center;
+    font-size: 24px;
+    padding: 10px 16p;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.note-title-content{
     font-size: 24px;
     padding: 10px 16px;
     font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
 }
 .note-body{
+    text-align: center;
     font-size: 20px;
-    padding: 10px 16px 16px;
+    padding: 20px 16px 16px 20px;
+    font-family: 'Courier New', Courier, monospace;
 }
 .note:hover {
     box-shadow: 2px 4px 10px rgba(0, 0, 0, 1);

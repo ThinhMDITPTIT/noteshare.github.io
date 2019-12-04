@@ -25,9 +25,6 @@ const content = `
                 <button class="new-note-btn1" id="js-btnEdit"  style="display: none;">
                     Edit
                 </button>
-                <button class="new-note-btn1" id="js-btnSave" style="display: none;">
-                    Save Note
-                </button>
         </div>
     </div>
 </div>
@@ -91,12 +88,19 @@ function renderEdit() {
     const textArea = `
         <textarea id="js-content" name="#js-content"></textarea>
     `;
-    document.getElementById("js-noteContent").style.display = "none";
-    document.getElementById("js-btnEdit").style.display = "none";
-    document.getElementById("js-btnSave").style.display = "block";
+    const savebtn = `
+        <button class="new-note-btn1" id="js-btnSave">
+            Save Note
+        </button>
+    `;
+    document.getElementById('js-noteContent').style.display = "none";
+    document.getElementById('js-btnEdit').style.display = "none";
     document
         .getElementById("js-noteArea")
         .insertAdjacentHTML("beforebegin", textArea);
+    document
+        .getElementById("js-noteArea")
+        .insertAdjacentHTML("beforeend", savebtn);
 
     let editor;
 
@@ -104,7 +108,7 @@ function renderEdit() {
         .create( document.querySelector( '#js-content' ) )
         .then( newEditor => {
             editor = newEditor;
-            editor.setData(document.getElementById("js-noteContent").innerHTML);
+            editor.setData(document.getElementById('js-noteContent').innerHTML);
         } )
         .catch( error => {
             console.error( error );
@@ -113,11 +117,9 @@ function renderEdit() {
     saveNote.addEventListener('click', function (event) {
         const editorData = editor.getData();
         save(editorData);
-        document.getElementById("js-noteContent").innerHTML = "";
-        document.getElementById("js-noteContent").innerHTML = editorData;
-        document.getElementById("js-noteContent").style.display = "block";
-        document.getElementById("js-btnSave").style.display = "none";
-        document.getElementById("js-btnEdit").style.display = "block";
+        document.getElementById('js-noteContent').style.display = "block";
+        document.getElementById('js-btnSave').style.display = "none";
+        document.getElementById('js-btnEdit').style.display = "block";
         
         const listNote = document.getElementById("js-listNote");
         const listNoteLi = listNote.children;

@@ -20,7 +20,7 @@ body {
 
 @-webkit-keyframes colorchange {
 
-     0%  {background: #33FFF3;}
+     0%  {background: rgb(18, 94, 89);}
     25%  {background: #78281F;}
     50%  {background: #117A65;}
     75%  {background: #DC7633;}
@@ -41,6 +41,17 @@ ul{
 }
 
 input[type=email],[type=password]{
+    font-size: large;
+    width: 350px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=text1]{
     font-size: large;
     width: 350px;
     margin: 10px 0;
@@ -145,14 +156,17 @@ form{
     border-radius: 5px;
 }
 
-.flex-grow-1{
+/* .flex-grow-1{
     flex-grow: 1;
 }
 
-.flex-grow-12{
-    flex-grow: 12;
-}
+.flex-grow-5{
+    flex-grow: 5;
+} */
 
+.background_div{
+    background-color: #fffefe;
+}
 .listSL{
     font-size: large;
     width: 350px;
@@ -252,7 +266,7 @@ li.disable{
     background-color: #fdfcfc;
     border-radius: 2px;
     margin: 0;
-    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 1px 3px 5px rgba(0, 0, 0, 0);
     transition: all 0.5s;
     cursor: pointer;
     font-family: 'Caveat', cursive;
@@ -341,6 +355,10 @@ li.disable{
     text-align: center;
     font-size: 20px;
     padding: 20px 16px 16px 20px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.note-textarea{
+    font-size: 20px;
     font-family: 'Courier New', Courier, monospace;
 }
 .note:hover {

@@ -6,26 +6,27 @@ let noteListener = null;
 let contentListener = null;
 const localNotes = [];
 
+//Tạo note
 function saveNote(name) {
     db.collection("notes")
         .doc()
         .set({
             name: name,
-            // list_member: [user.authUser]
+            list_member: [user.authUser]
         });
 }
 
+//Update content cho note đang active
 function saveContent(content) {
-    db.collection("contentNotes")
-        .doc()
-        .set({
+    db.collection("notes")
+        .doc(activeNote)
+        .update({
             content: content,
-            note_id: activeNote,
-        });
+            note_id: activeNote
+        })
 }
 
-
-
+//Hiện ra note có email trong danh sách
 function listenNote() {
     if (noteListener) {
         noteListener();
@@ -38,23 +39,24 @@ function listenNote() {
             for (let i = 0; i < notes.length; i++) {
                 if (localNotes.indexOf(notes[i].doc.id) < 0) {
                     localNotes.push(notes[i].doc.id);
-                    // console.log(notes[i].doc.id);
                     noteScreen.createnewNote({
                         id: notes[i].doc.id,
                         name: notes[i].doc.data().name,
-                        // list_member: notes[i].doc.data().list_member
                     });
                 }
             }
+           
         });
 }
 
+//Load content của note
 function listenContent() {
     if (!activeNote) return;
     if (contentListener) {
         contentListener();
     }
-    contentListener = db.collection("contentNotes")
+    contentListener = db
+        .collection("notes")
         .where("note_id", "==", activeNote)
         .onSnapshot(function (snapshot) {
             const content = snapshot.docChanges();
@@ -66,6 +68,7 @@ function listenContent() {
         });
 }
 
+//Chạy lại nội dung của note đang active
 function updateActiveNote(nextId) {
     activeNote = nextId;
     listenContent();

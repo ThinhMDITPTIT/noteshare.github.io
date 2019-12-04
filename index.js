@@ -7,7 +7,7 @@ function setScreen(screen) {
 }
 
 window.onload = function(){
-    setScreen(noteScreen)
+    setScreen(loginScreen)
 };
 
 export default setScreen;

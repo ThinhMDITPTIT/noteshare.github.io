@@ -12,13 +12,8 @@ function changeActiveNote(nextNoteId){
     updateActiveNote(nextNoteId);
 }
 
-function remove(){
-
-}
-
 export{
     creatNote,
     changeActiveNote,
-    save,
-    remove
+    save
 };

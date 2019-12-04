@@ -1,5 +1,5 @@
 import {validateEmail} from "../utils.js";
-import user from "../models/user.js";
+import user from "../Models/user.js";
 
 async function register(email, password, retypePassword){
     if(!validateEmail(email)){

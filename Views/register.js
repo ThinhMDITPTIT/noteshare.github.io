@@ -10,7 +10,7 @@ const content = `
                     <label id="lable">MyNote !!!</label>
                 </div>
                 <div>
-                    <input type="text" name="Name" placeholder="Full name..." id="name">
+                    <input type="text1" name="Name" placeholder="Full name..." id="name">
                     <i class="fas fa-file-signature"></i>
                 </div>
                 <div>
